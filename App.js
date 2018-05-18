@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Login from './app/component/Login';
+import Profile from './app/component/Profile';
 
 
 const Application = StackNavigator({

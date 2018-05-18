@@ -58,7 +58,31 @@ export default class Login extends React.Component {
     );
   }
   login=()=>{
-      alert('test');
+      alert(this.state.username);
+      fetch('http://10.10.6.151:8080/users',{
+          method:'POST',
+          headers:{
+              'Accept':'application/json',
+              'Content-Type':'application/json',
+          },
+          body:JSON.stringify({
+              username:this.state.username,
+              password:this.state.password
+          })
+
+      })
+.then((response)=>response.json())
+.then((res)=>{
+    if(res.success===true){
+        AsyncStorage.setItem('user',res.user);
+        this.props.navigation.navigate('Profile');
+    }
+    else{
+        alert(res.message);
+    }
+})
+.done();
+
   }
 }
 
