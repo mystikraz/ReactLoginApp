@@ -89,6 +89,7 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
     wrapper:{
         flex:1,
+        padding:0
     },
   container: {
     flex: 1,
